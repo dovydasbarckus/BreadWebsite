@@ -3,16 +3,7 @@
 body{
     @include body;
 }
-
-main{
-    scroll-snap-type: y mandatory;
-    overflow-y: scroll;
-    width: 100%;
-    max-height: 100vh;
-}
-main section{
-    scroll-snap-align: start;
-}     
+    
 
 #firstSection{
     min-height: 100vh;
@@ -211,20 +202,20 @@ nav{
         grid-template-columns: 1fr;
         grid-template-rows: repeat(5, 1fr)
     }
-    main {
-        scroll-snap-type: none;
-
-        section{
-            section{
-                scroll-snap-align: unset;
-            } 
-        }
-    }
-
 }
 
-
-
+@media only screen and  (min-width:796px){
+    main{
+        scroll-snap-type: y mandatory;
+        overflow-y: scroll;
+        width: 100%;
+        max-height: 100vh;
+    }
+    main section{
+        scroll-snap-align: start;
+    }
+}
+ 
 
 
 
