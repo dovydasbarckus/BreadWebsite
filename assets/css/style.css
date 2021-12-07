@@ -191,6 +191,9 @@ nav :first-child img {
   main {
     scroll-snap-type: none;
   }
+  main section section {
+    scroll-snap-align: unset;
+  }
 }
 #secondSection {
   margin-top: 10rem;

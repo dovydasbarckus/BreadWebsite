@@ -213,6 +213,12 @@ nav{
     }
     main {
         scroll-snap-type: none;
+
+        section{
+            section{
+                scroll-snap-align: unset;
+            } 
+        }
     }
 
 }
