@@ -4,15 +4,11 @@ body{
     @include body;
 }
 
-html {
-    scroll-behavior: auto;
-}
-
 main{
     scroll-snap-type: y mandatory;
     overflow-y: scroll;
     width: 100%;
-    height: 100%;
+    max-height: 100vh;
 }
 main section{
     scroll-snap-align: start;
@@ -56,7 +52,7 @@ nav{
 
         div{
             align-self: center;
-            justify-self: center;
+            justify-self: flex-start;
             cursor: pointer;     
                 
     }
@@ -76,7 +72,7 @@ nav{
 
     li {
         list-style: none;
-        flex-basis: 18%;
+        flex-basis: 15%;
         align-self:center;
         @include navBreak;
         
@@ -138,6 +134,10 @@ nav{
 }
 
 @media only screen and  (max-width:1200px){
+    .ul ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
     .main-heading {
         top: 50%;
 
@@ -159,16 +159,27 @@ nav{
     nav{
         width: 100%;
         grid-template-columns: 1fr;
-        
+        justify-items: center;
+  
         ul li{
             margin-right: 30px;
+
         }
 
         background-color: rgba(199, 190, 162, 0.829);
+
         :last-child{
             flex-direction: row;
         }
 
+        .icons{
+
+            div{
+                justify-self: center;
+            }
+            
+
+        }
         
     }
     .main-heading {
@@ -194,10 +205,12 @@ nav{
     }
 }
 
-@media only screen and  (max-width:1200px){
-    main{
-        scroll-snap-type: none; 
-    }     
+@media only screen and  (max-width:500px){
+    .ul ul {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, 1fr)
+    }
 }
 
 
