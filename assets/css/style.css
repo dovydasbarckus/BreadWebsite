@@ -187,6 +187,10 @@ nav :first-child img {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(5, 1fr);
   }
+
+  main {
+    scroll-snap-type: none;
+  }
 }
 #secondSection {
   margin-top: 10rem;
