@@ -1,0 +1,206 @@
+@use "../components/mixins.scss" as *;
+
+body{
+    @include body;
+}
+
+html {
+    scroll-behavior: auto;
+}
+
+main{
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    width: 100%;
+    height: 100%;
+}
+main section{
+    scroll-snap-align: start;
+}     
+
+#firstSection{
+    min-height: 100vh;
+    max-width: 100%;
+    position: relative;
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Home_made_sour_dough_bread.jpg/800px-Home_made_sour_dough_bread.jpg");
+    background-position: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+}
+
+nav{
+    background-color: rgba(199, 190, 162, 0.829);
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    align-content: center;
+    text-transform: uppercase;
+    width: 100%;
+    position: fixed;
+    z-index: 20;
+    padding-bottom: 0.2rem;
+
+    :first-child img{
+        filter:saturate(3);
+        height: 50px;
+        margin-left: 2rem;
+        @include iconsBreak2;
+    }
+    }
+
+    .icons{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        font-size: 1.5rem;
+
+        div{
+            align-self: center;
+            justify-self: center;
+            cursor: pointer;     
+                
+    }
+}
+
+
+.ul {
+    ul{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        align-content: flex-end;
+        
+        
+    }
+
+    li {
+        list-style: none;
+        flex-basis: 18%;
+        align-self:center;
+        @include navBreak;
+        
+
+    a{  
+        color: #fff;
+        text-decoration: none;
+        font-size: 1rem;
+        
+    }
+    }
+}    
+
+
+.main-heading{
+    font-family: "Lato";
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    &--h1{
+        font-size: 5rem;
+        font-weight: 900;
+        text-shadow: 1px 2px 2px black;
+        
+    }
+    &--p{
+        font-size: 3rem;
+        font-weight: 400;
+        text-shadow: 1px 2px 2px black;
+    }
+
+    .que-menu{
+        background-color: rgb(199, 190, 162, 0.7);
+        padding: 2rem 3rem;
+        border-radius: 15px;
+        font-size: 2rem;
+        font-weight: 400;
+        color:#fff;
+        border: 1px solid #fff;
+        box-shadow: 1px 2px 2px rgba(0,0,0,0.5);
+        cursor: pointer;
+    }
+}
+
+.bottom-line{
+    position: absolute;
+    width: 100%;
+    bottom: -3.5rem;
+    left: 0;
+    
+    img{
+        min-height: 12vh;
+        max-width: 100%;
+        
+    }
+}
+
+@media only screen and  (max-width:1200px){
+    .main-heading {
+        top: 50%;
+
+        &--h1 {
+            font-size: 4rem;
+        } 
+
+        &--p {
+            font-size: 2rem;
+        } 
+
+        .que-menu{
+            transform: scale(0.7);
+        }
+    }
+}
+
+@media only screen and  (max-width:678px){
+    nav{
+        width: 100%;
+        grid-template-columns: 1fr;
+        
+        ul li{
+            margin-right: 30px;
+        }
+
+        background-color: rgba(199, 190, 162, 0.829);
+        :last-child{
+            flex-direction: row;
+        }
+
+        
+    }
+    .main-heading {
+        width: 90%;
+
+        &--h1 {
+            font-size: 2.5rem; 
+        } 
+
+        &--p {
+            font-size: 1.5rem;
+        } 
+
+        .que-menu{
+            transform: scale(0.5);
+        }
+    }
+}
+
+@media only screen and  (max-width:1050px){
+    .bottom-line{
+        display: none;
+    }
+}
+
+@media only screen and  (max-width:1200px){
+    main{
+        scroll-snap-type: none; 
+    }     
+}
+
+
+
+
+
