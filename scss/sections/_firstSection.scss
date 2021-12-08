@@ -10,10 +10,23 @@ body{
     max-width: 100%;
     position: relative;
     background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Home_made_sour_dough_bread.jpg/800px-Home_made_sour_dough_bread.jpg");
-    background-position: fixed;
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     color: #fff;
+
+    &::after{
+        content:"";
+        position: absolute;
+        height: 80px;
+        width:80px;
+        bottom: -6rem;
+        left:50%;
+        transform: translate(-50%, -50%);
+        clip-path: circle(50%);
+        background-color:white;
+    }
+
 }
 
 nav{
@@ -33,6 +46,9 @@ nav{
         margin-left: 2rem;
         @include iconsBreak2;
     }
+    }
+    .menuIcon{
+        height: 0;
     }
 
     .icons{
@@ -125,6 +141,10 @@ nav{
 }
 
 @media only screen and  (max-width:1200px){
+    #thirdSection .letter{
+        margin-top: 3rem;
+    }
+    
     .ul ul {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -151,13 +171,11 @@ nav{
         width: 100%;
         grid-template-columns: 1fr;
         justify-items: center;
+        background-color: rgba(199, 190, 162, 0.829);
   
         ul li{
             margin-right: 30px;
-
         }
-
-        background-color: rgba(199, 190, 162, 0.829);
 
         :last-child{
             flex-direction: row;
@@ -190,21 +208,21 @@ nav{
     }
 }
 
-@media only screen and  (max-width:1050px){
-    .bottom-line{
-        display: none;
-    }
-}
-
 @media only screen and  (max-width:500px){
     .ul ul {
-        display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: repeat(5, 1fr)
+        grid-template-rows: repeat(5, 1fr);
+        display: none;
+    }
+    .icons {
+        padding-top: 2rem;
+        padding-bottom: 1rem;
+
     }
 }
 
-@media only screen and  (min-width:796px){
+
+@media only screen and  (min-width:500px){
     main{
         scroll-snap-type: y mandatory;
         overflow-y: scroll;

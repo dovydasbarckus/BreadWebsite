@@ -1,6 +1,5 @@
 #thirdSection{
     position: relative;
-
     padding: 1rem 0;
     margin-top: 2rem;
     max-width: 100%;
@@ -22,25 +21,22 @@
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 50%;
-        background: linear-gradient(45deg, transparent 35px, #fff 0) bottom left;
-        background-repeat: no-repeat;
-        border-radius: 32px;
         background-image: url("../../images/3/cardBg.png");
         background-position: bottom right;
         background-repeat: no-repeat;
         background-size:auto;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 55px 100%, 0 calc(100% - 55px));
+    
         
         &::after{
             content: '';
-            width: 2.5em;
-            height: 2.5em;
             position: absolute;
+            width: 55px;
+            height: 55px;
             bottom: 0;
             left: 0;
-            display: inline-block;
-            background: linear-gradient(45deg, transparent 1.5em, #D5D5D5 0) no-repeat;
-            border-top-right-radius: 5px;
-            background-repeat: no-repeat;
+            display: block;
+            background-color: red;
         }
         
 
@@ -182,12 +178,6 @@
     #thirdSection .letter__list {
         margin: 0 auto;
         padding: 0;
-    }
-    #thirdSection .letter::after{
-        display: none;
-    }
-    #thirdSection .letter{
-        background: linear-gradient(45deg, transparent 1.5em, #D5D5D5 0) no-repeat;
     }
 }
 

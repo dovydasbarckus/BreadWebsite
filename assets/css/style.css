@@ -11,10 +11,21 @@ body {
   max-width: 100%;
   position: relative;
   background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Home_made_sour_dough_bread.jpg/800px-Home_made_sour_dough_bread.jpg");
-  background-position: fixed;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   color: #fff;
+}
+#firstSection::after {
+  content: "";
+  position: absolute;
+  height: 80px;
+  width: 80px;
+  bottom: -6rem;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  clip-path: circle(50%);
+  background-color: white;
 }
 
 nav {
@@ -37,6 +48,10 @@ nav :first-child img {
   nav :first-child img {
     display: none;
   }
+}
+
+.menuIcon {
+  height: 0;
 }
 
 .icons {
@@ -117,6 +132,10 @@ nav :first-child img {
 }
 
 @media only screen and (max-width: 1200px) {
+  #thirdSection .letter {
+    margin-top: 3rem;
+  }
+
   .ul ul {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -165,19 +184,19 @@ nav :first-child img {
     transform: scale(0.5);
   }
 }
-@media only screen and (max-width: 1050px) {
-  .bottom-line {
-    display: none;
-  }
-}
 @media only screen and (max-width: 500px) {
   .ul ul {
-    display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(5, 1fr);
+    display: none;
+  }
+
+  .icons {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
   }
 }
-@media only screen and (min-width: 796px) {
+@media only screen and (min-width: 500px) {
   main {
     scroll-snap-type: y mandatory;
     overflow-y: scroll;
@@ -332,25 +351,21 @@ nav :first-child img {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 50%;
-  background: linear-gradient(45deg, transparent 35px, #fff 0) bottom left;
-  background-repeat: no-repeat;
-  border-radius: 32px;
   background-image: url("../../images/3/cardBg.png");
   background-position: bottom right;
   background-repeat: no-repeat;
   background-size: auto;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 55px 100%, 0 calc(100% - 55px));
 }
 #thirdSection .letter::after {
   content: "";
-  width: 2.5em;
-  height: 2.5em;
   position: absolute;
+  width: 55px;
+  height: 55px;
   bottom: 0;
   left: 0;
-  display: inline-block;
-  background: linear-gradient(45deg, transparent 1.5em, #D5D5D5 0) no-repeat;
-  border-top-right-radius: 5px;
-  background-repeat: no-repeat;
+  display: block;
+  background-color: red;
 }
 #thirdSection .letter__pancake img {
   width: 100%;
@@ -471,14 +486,6 @@ nav :first-child img {
   #thirdSection .letter__list {
     margin: 0 auto;
     padding: 0;
-  }
-
-  #thirdSection .letter::after {
-    display: none;
-  }
-
-  #thirdSection .letter {
-    background: linear-gradient(45deg, transparent 1.5em, #D5D5D5 0) no-repeat;
   }
 }
 @media only screen and (max-width: 1170px) {
