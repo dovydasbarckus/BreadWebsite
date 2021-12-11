@@ -1,0 +1,23 @@
+@mixin body{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 62.5%;
+    font-family: 'Lato', sans-serif;
+}
+
+
+@mixin navBreak {
+    @media only screen and  (max-width:1200px){
+        flex-basis:45%;
+        text-align: center;
+        
+    }
+}
+
+@mixin iconsBreak2{
+    @media only screen and  (max-width:687px){
+           display:none;
+    }
+}
+

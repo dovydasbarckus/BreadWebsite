@@ -1,0 +1,23 @@
+{
+  "name": "bakery-website-full-page-2021-11-27",
+  "version": "1.0.0",
+  "description": "bakery-shop",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "sass --watch scss:assets/css"
+  },
+  "keywords": [
+    "bakery",
+    "shop"
+  ],
+  "author": "Dovis",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.43.5"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
+    "autoprefixer": "^10.4.0",
+    "postcss-cli": "^9.0.2"
+  }
+}
