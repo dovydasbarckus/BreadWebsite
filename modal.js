@@ -20,6 +20,10 @@ modalCloseButton.addEventListener("click", ()=> {
         
     })
 
+overlay.addEventListener("click", function(){
+    const modal = document.querySelector(modalOpenButton.dataset.modalTarget);
+    closeModal(modal);
+})
 
 function openModal(modal){
     if ( modal == null) return;
