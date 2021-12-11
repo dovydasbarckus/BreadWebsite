@@ -5,15 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/cc03000d82.js" crossorigin="anonymous"></script>
     <script src="index.js" defer></script>
+    <script src="modal.js" defer></script>
+    <link rel="stylesheet" href="assets/vendors/css/glightbox.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lato:ital,wght@0,700;0,900;1,400&family=Luxurious+Script&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="assets/css/style.css">
     
     <title>Bread Shop</title>
 </head>
 
-<body>
-<main class="myMain"> 
-    <section id="firstSection" >
+<body >
+<main > 
+    <section id="firstSection">
+    <div id="overlay"></div>
     <nav>
         <div>
             <img src="images/klaipedos_duona.png" alt="bread">
@@ -28,10 +31,9 @@
             </ul>
         </div>
         <div class="icons">
-            <div><i class="fab fa-twitter "></i></div>
-            <div><i class="fab fa-facebook-f "></i></div>
-            <div><i class="fab fa-instagram "></i></div>
-            
+            <div><i class="fab fa-twitter"></i></div>
+            <div><i class="fab fa-facebook-f"></i></div>
+            <div><i class="fab fa-instagram"></i></div>
         </div>
     </nav>
 
@@ -40,7 +42,19 @@
             <h1 class="main-heading--h1">Pastry with love</h1>
             <p class="main-heading--p">We are bringing you fresh ingredients every day in ways you can't resist</p>
         </div>
-        <button class ="que-menu">Que Menu</button>
+        <button data-modal-target="#modal" class ="que-menu">Open Menu</button>
+    </div>
+    <div class="modal" id="modal">
+        <div class="modal-header">
+            <h1 class="modal-header__title">Our Superb Menu</h1>
+            <button data-close-button class="modal-header__closeBTN">&times;</button>
+        </div>
+        <div class="modal-body">
+            <p>Fresh Bread <span>2.50 &euro;</span></p>
+            <p>Fresh Buns <span>3.00 &euro;</span></p>
+            <p>Pancakes <span>2.00 &euro;</span></p>
+            <p>Ring-shaped rolls <span>2.50 &euro;</span></p>
+        </div>
     </div>
 </section>
 
@@ -137,7 +151,9 @@
                     <div class="p">
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque voluptatum deserunt labore atque mollitia sunt a necessitatibus natus voluptate.</p>
                     </div>
-                    <button class="readMore" type="button">READ MORE</button>
+                    <button class="readMore glightbox" type="button">
+                      </a>Watch Video</button>
+                    
                 </div>
              </div>
              
@@ -214,5 +230,17 @@
         </div>
     </section>
 </main>
+
+<script src="assets/vendors/js/glightbox.min.js"></script>
+    <script type="text/javascript">
+        const lightbox = GLightbox({
+            'href': 'https://www.youtube.com/watch?v=EGbNI26PPYg',
+            'type': 'video',
+            'source': 'youtube', //vimeo, youtube or local
+            'width': 900,
+            'autoplayVideos': true,
+            "touchNavigation": true,
+});
+    </script>
 </body>
 </html>

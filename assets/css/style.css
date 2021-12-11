@@ -1,3 +1,72 @@
+:root {
+  --bgColor: rgba(0,0,0,0.5);
+}
+
+#overlay {
+  display: none;
+  position: fixed;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100vh;
+  opacity: 0.8;
+  transition: 200ms solid ease-in-out;
+  background-color: var(--bgColor);
+  pointer-events: all;
+}
+
+.modal {
+  position: fixed;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms solid ease-in-out;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: #fff;
+  color: black;
+  width: min(90%, 800px);
+  z-index: 20;
+}
+.modal-header {
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+.modal-header__title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.modal-header__closeBTN {
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+.modal.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-body {
+  text-align: center;
+}
+.modal-body h1 {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+}
+.modal-body p {
+  font-size: 1rem;
+}
+.modal-body p:last-child {
+  margin-bottom: 2rem;
+}
+
 body {
   box-sizing: border-box;
   margin: 0;
